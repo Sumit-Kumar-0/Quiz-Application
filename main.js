@@ -1,6 +1,6 @@
 let options = document.querySelectorAll(".option");
 let playerName = document.querySelector(".input input");
-let submitFormBtn = document.querySelector(".submit-form");
+let submitFormBtn = document.querySelector("#submit-form");
 let formContainer = document.querySelector(".form-container");
 let quizContainer = document.querySelector(".quiz-container");
 let playAgain = document.querySelector(".play-again");
@@ -12,7 +12,8 @@ let wrongAnswer = document.querySelector(".wrong-answer");
 
 let player = ""
 const submitForm = () => {
-    submitFormBtn.addEventListener("click", () => {
+    submitFormBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         if (playerName.value.length > 0) {
             player = playerName.value;
             formContainer.style.display = ("none");
